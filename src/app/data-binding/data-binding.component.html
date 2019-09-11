@@ -1,0 +1,83 @@
+<div>
+    <h2>Data binding component</h2>
+    <h3>Interpolação</h3>
+    <p>{{texto}}</p>
+   <!-- <p>0 resultado de 1 + 1 é {{ 1 + 1 }}</p>
+    <p>0 resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+
+    <h2>Property binding</h2>
+    <img src="{{ urlImagem }}"/>
+    <img [src]="urlImagem"/>
+
+    <h2>Event binding</h2>
+    <input type="button" (click)="botaoBinding()"
+        value="Evento do botão"> 
+
+    <label>Input</label> 
+    <input type="text" (keyup)="onKeyUp($event)" > 
+     <br> 
+     <br> ValorDigitado: {{valorDigitado}}
+     <br>
+
+     
+     
+     <h1>Fatorial</h1>
+     <label>Número:</label>
+     <input type="text" ng-model="numero" placeholder="Calcular o fatorial" />
+     <button>calcular</button>
+     <h1>{{ resultado }}</h1>
+     <br/>
+
+</div>
+<script>
+    var app = angular.module('fatorialApp', []);
+    app.controller('fatorialController', function($scope) {
+      $scope.resultado = function() {
+
+        var resultadoDoFatorial = 1;
+        for (var i = 1; i <= $scope.numero; i++) {
+          resultadoDoFatorial = resultadoDoFatorial * i;
+        }
+        return resultadoDoFatorial;
+      }
+    });
+  </script> 
+  <html ng-app="imcApp">
+<head>
+  <script src="https://code.angularjs.org/1.3.5/angular.min.js"></script>
+</head>
+<body ng-controller="ImcController">
+  <label>Peso <input ng-model="peso"/> kg</label><br/>
+  <label>Altura <input ng-model="altura"/> m</label><br/>
+  <button ng-click="calculaImc()">Calcular IMC</button>
+  <div ng-show="exibeResultados">
+    <hr/>
+    <div>IMC: {{ imc | number }}</div>
+    <div>Situação: {{ situacao }}</div>
+  </div>
+  <script>
+    angular.module('imcApp', [])
+    .controller('ImcController', function ($scope) {
+      $scope.calculaImc = function () {
+        $scope.imc = $scope.peso / ( $scope.altura * $scope.altura );
+        if ($scope.imc < 18.5) {
+          $scope.situacao = 'Abaixo do peso';
+        } else if ($scope.imc >= 18.5 && $scope.imc < 30) {
+          $scope.situacao = 'Peso normal';
+        } else if ($scope.imc >= 30) {
+          $scope.situacao = 'Obesidade';
+        }
+        $scope.exibeResultados = true;
+      }
+    });
+  </script>
+</body>
+</html> -->
+   
+     <label>Nome input</label>
+     <input type="text" 
+        [(ngModel)]="nome">
+     <br/>
+     <p>Nome digitado: {{ nome }}</p>
+
+     <br> 
